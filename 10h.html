@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Projects</title>
+    <style>
+      .btn-1{
+        background-color: black;
+        color: #fff;
+        padding: 10px;
+        font-weight: 700;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+      }
+      /* .btn-1:hover{
+        color: red;
+      } */
+      .is-subscribed{
+        background-color: rgb(240, 240, 240);
+        color: #000;
+      }
+      body{
+       font-family: Arial;
+      }
+      .cost-input{
+        padding: 7px;
+      }
+      .btn-2{
+        padding: 8px 15px;
+        background: green;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+        font-size: 15px;
+      }
+      .js-error{
+        color: red;
+      }
+    </style>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="subscribe()" class="js-sub-btn btn-1">Subscribe</button>
+
+    <br><br><br>
+   
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input type="text" placeholder="Cost of Order" class="js-cost-input cost-input"
+     onkeydown="handleCostKeydown(event);">
+    <button onclick="calculateTotal();" class="btn-2">Calculate</button>
+
+    <p class="js-total-cost"></p>
+    <p class="js-error"></p>
+
+<script>
+   // console.log(Number('30') + 5)  // Example of Type Coercion
+//console.log('30' / 5)  If a string only Contains a number and we -> -*/
+// it will be converted into a number
+
+//window.alert('Hi!....')
+function handleCostKeydown(event) {
+// console.log(event.key);
+     if(event.key === 'Enter'){
+      calculateTotal();
+     }
+}
+
+function calculateTotal(){
+   const inputElement = document.querySelector('.js-cost-input')//whenever we get a value from DOM the value will be string
+   let cost = Number(inputElement.value); //manually convert String to number
+   // console.log(cost);
+   // console.log(typeof cost);
+
+   document.querySelector('.js-total-cost').innerHTML = '';
+   document.querySelector('.js-error').innerHTML = '';
+   if(cost < 0){
+    document.querySelector('.js-error').innerHTML = 'Error: cost cannot be less than $0';
+    // If we display an error, we can use return to
+          // end this function immediately. This is called
+          // an "early return" and it makes the code cleaner
+          // because it reduces nesting / indents.
+    return;
+   }
+
+   if(cost < 40){
+    cost = cost + 10;
+   }
+
+   document.querySelector('.js-total-cost')
+     .innerHTML = `$${cost}`;
+}
+
+
+
+function subscribe() {
+ const buttonElement = document.querySelector('.js-sub-btn');
+   
+   if (buttonElement.innerText === 'Subscribe'){
+    buttonElement.innerHTML = 'Subscribed';
+    buttonElement.classList.add('is-subscribed');
+   } else{
+    buttonElement.innerHTML = 'Subscribe';
+    buttonElement.classList.remove('is-subscribed');
+   }
+}
+
+</script>
+
+</body>
+</html>

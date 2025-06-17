@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+<body>
+    <!-- <script>
+        const add = function(){
+            console.log(2+3);
+        }
+        add();
+          add();
+
+          function runTwice(fun) {
+              fun();
+              fun();
+            }  
+                runTwice(function() {
+                console.log('12b');
+                });
+                
+      runTwice(add);
+    </script> -->
+ <!-- <button onclick="btnClick()" class="js-btn">Start</button> -->
+
+    <button  class="js-btn">Start</button>
+    <script>
+       /* function btnClick(){
+          const btn = document.querySelector('.js-btn');
+          btn.innerHTML = 'Loading...🧐'
+          //   setTimeout(function(){
+          setTimeout(() =>{  // arrow Function
+          btn.innerHTML = 'Finished!'
+          }, 3000);  
+        }
+        document.querySelector('.js-btn').addEventListener('click',() =>{
+          btnClick()
+        } );  */
+
+         document.querySelector('.js-btn').addEventListener('click',() =>{
+          const btn = document.querySelector('.js-btn');
+          btn.innerHTML = 'Loading...🧐'
+          //   setTimeout(function(){
+          setTimeout(() =>{  // arrow Function
+          btn.innerHTML = 'Finished!'
+          }, 3000);
+        } );
+
+
+    </script>
+
+    <!-- <button onclick="addToCart();" class="js-btn2">Add To Cart</button>
+    <p class="js-message"></p>
+    <script>
+    let timeoutId;
+    function addToCart(){
+        
+     const show = document.querySelector('.js-message');
+     show.innerHTML= 'Added🥶';
+
+     clearTimeout(timeoutId);
+
+     timeoutId = setTimeout(() =>{
+        show.innerHTML='';
+     }, 2000);
+     
+    }
+    
+    </script> -->
+<!-- <button onclick="messages++;    displayNotification();">Add</button>
+<button onclick=" if (messages > 0) {
+        messages--;
+
+        // If there are no new messages, stop displaying
+        // the notification in the tab.
+        if (messages === 0) {
+          stopNotification();
+        }
+      }">Remove</button>
+    <script>
+        let messages = 2;
+         let isDisplayingNotification;
+          let intervalId;
+
+    displayNotification();
+      function displayNotification() {
+        // If we're already displaying the notification,
+        // stop this function because we don't want to
+        // create 2 intervals at the same time.
+        if (isDisplayingNotification) {
+          return;
+        }
+
+        isDisplayingNotification = true;
+
+        intervalId =  setInterval(function(){
+        if(document.title === 'App'){
+           document.title= `(${messages}) New messages`;
+        } else{
+             document.title= 'App';
+        }   
+        }, 1000);
+    }
+         function stopNotification() {
+        isDisplayingNotification = false;
+
+        clearInterval(intervalId);
+        document.title = 'App';
+      }
+    </script> -->
+</body>
+</html>

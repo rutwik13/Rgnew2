@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Projects</title>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="subscribe()" class="js-sub-btn">Subscribe</button>
+
+
+    <p>Amazon Shipping Calculator</p>
+
+    <input type="text" placeholder="Cost of Order" class="js-cost-input"
+     onkeydown="handleCostKeydown(event);">
+    <button onclick="calculateTotal();">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+<script>
+   // console.log(Number('30') + 5)  // Example of Type Coercion
+//console.log('30' / 5)  If a string only Contains a number and we -> -*/
+// it will be converted into a number
+
+//window.alert('Hi!....')
+function handleCostKeydown(event) {
+// console.log(event.key);
+     if(event.key === 'Enter'){
+      calculateTotal();
+     }
+}
+
+function calculateTotal(){
+   const inputElement = document.querySelector('.js-cost-input')//whenever we get a value from DOM the value will be string
+   let cost = Number(inputElement.value) * 100; //manually convert String to number
+   // console.log(cost);          //converted value into cents
+   // console.log(typeof cost);
+
+   if(cost < 4000){  // $40
+    cost = cost + 1000;  //$10
+   }
+
+   document.querySelector('.js-total-cost')
+     .innerHTML = `$${(cost/100)}`;  //converted back cent to dollar
+}
+
+function subscribe() {
+ const buttonElement = document.querySelector('.js-sub-btn');
+   
+   if (buttonElement.innerText === 'Subscribe'){
+    buttonElement.innerHTML = 'Subscribed';
+   } else{
+    buttonElement.innerHTML = 'Subscribe';
+   }
+}
+
+</script>
+
+</body>
+</html>

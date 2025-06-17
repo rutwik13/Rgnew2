@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        /*
+        const product = {
+            name :'Ragnar',
+            price: 0
+        };
+        console.log(product);
+        console.log(product.name);
+
+        product.name ='RG';
+        console.log(product.name);
+
+        product.new =true;
+                console.log(product);
+         
+           delete product.new;
+                   console.log(product);
+     */
+
+    /* 
+ const product2 = {
+    name: 'shirt',
+    //['delivery-time']: '1 day'
+ 'delivery-time': '1 day',
+        rating :{
+            stars: 4.5,  //nested object
+            count: 97
+        },
+        fun : function function1 (){
+            console.log('Function Inside The Object');   //a function is another type of value
+
+        }
+ };
+console.log(product2.name);
+console.log(product2['name']);
+console.log(product2['delivery-time'])
+console.log(product2.rating.count)
+
+product2.fun();
+
+console.log(JSON.stringify(product2))
+
+const jsonString =  JSON.stringify(product2)
+console.log( JSON.parse(jsonString))
+*/
+
+console.log('Ragnar'.length);
+console.log('Ragnar'.toUpperCase());
+
+const object1 ={
+    message: 'hello'
+};
+
+const object2 = object1;
+
+object1.message = 'Good Job!';
+
+console.log(object1);
+console.log(object2);
+
+const object3 = {
+    message :'Good Job!'
+} ;
+
+console.log(object3 === object1);    //Objects are references   ---
+// compares the references not the values inside
+console.log(object2 === object1); 
+
+
+const object4 = {
+    message :'Good Job!',
+    price: 899
+} ;
+
+//const message = object4.message;
+const {message,price} = object4  // this is called destructuring
+console.log(message);
+console.log(price);
+
+
+const object5 ={
+    //message : message
+    message,
+    // method : function function1 (){
+    //     console.log('method')
+    // }
+    method (){
+        console.log('method')
+    }
+};
+console.log(object5);
+object5.method();
+    </script>
+
+</body>
+</html>

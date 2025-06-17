@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+          let words = ['hello', 'world', 'search', 'good', 'search'];
+          // Set the index to -1 at the start (so we'll assume
+      // the string 'search' doesn't exist in the array).
+      // If we find the string 'search' in the array, we
+      // will update the index.
+      let index = -1;
+
+      for(let i=0; i<words.length; i++){
+        if(words[i]=== 'search'){
+            index = i;
+             // Once we find 'search', immediately exit
+          // the loop since we want the index of the
+          // first appearance of 'search'.
+            break;
+        }
+      }
+      console.log(index);
+
+       words = ['not', 'found'];
+      index = -1;
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === 'search') {
+          index = i;
+        }
+      }
+      console.log(index);
+    </script> -->
+
+    <!-- <script>
+        function findIndex(array, word){
+    
+    for (let i = 0; i < array.length; i++) {
+       if(array[i] === word){
+        // Instead of creating an accumulator
+            // variable and updating it in the loop,
+            // we can just return i directly, when
+            // we find it since this is a function.
+        return i;
+       }
+    }
+     // If the function has not returned by now,
+        // logically that means the word must not
+        // exist in the array, so we'll return -1.
+        return -1;  
+        }
+       console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'))
+    </script>-->
+
+    <!-- <script>
+        function removeEgg(foods){
+           const result = [];
+            let eggsRemoved = 0;
+            
+
+            for(let i=0; i<foods.length; i++){
+                  // Only skip 'egg' if we removed less than 2
+          // of them so far.
+                
+                if(foods[i]==='egg' && eggsRemoved < 2){
+                     // Update the number of 'egg' we have removed.
+            // This must be done before continue, otherwise,
+            // doing continue first will just skip this code.
+                     eggsRemoved++;
+                    continue;   
+                }
+                result.push(foods[i]);
+            }
+         return result;
+        }
+        console.log(removeEgg(['egg', 'apple','egg','egg', 'ham']))
+    </script> -->
+
+       <!-- <script>
+        function removeEgg(foods){
+
+
+        const foodCopy = foods.slice();
+        const reversedFoods = foodCopy.reverse();
+
+           const result = [];
+            let eggsRemoved = 0;
+            
+             // To remove the last 2 'egg', reverse the array first.
+
+        
+        
+      
+            for(let i=0; i<reversedFoods.length; i++){
+                  // Only skip 'egg' if we removed less than 2
+          // of them so far.
+                
+                if(reversedFoods[i]==='egg' && eggsRemoved < 2){
+                     // Update the number of 'egg' we have removed.
+            // This must be done before continue, otherwise,
+            // doing continue first will just skip this code.
+                     eggsRemoved++;
+                    continue;   
+                }
+                result.push(reversedFoods[i]);
+            }
+       // At the end, remember to .reverse() back the result.
+        return result.reverse();
+        }
+        const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+        console.log(removeEgg(foods));
+        console.log(foods);
+
+    </script> -->
+
+<!-- <script>
+
+for(let i=1; i<=20; i++){
+
+    if(i%3===0 && i%5 ===0){
+        console.log('FizzBuzz');
+    }else if(i%3===0){
+        console.log('Fizz');
+    }else if(i%5===0){
+        console.log('Buzz');
+    }else{
+        console.log(i);
+    }
+}
+
+</script> -->
+<script>
+     function findIndex(array, word){
+    
+    for (let i = 0; i < array.length; i++) {
+       if(array[i] === word){
+        // Instead of creating an accumulator
+            // variable and updating it in the loop,
+            // we can just return i directly, when
+            // we find it since this is a function.
+        return i;
+       }
+    }
+     // If the function has not returned by now,
+        // logically that means the word must not
+        // exist in the array, so we'll return -1.
+        return -1;  
+        }
+
+        function unique(array) {
+        const result = [];
+         for (let i = 0; i < array.length; i++) {
+             const word = array[i];
+               // Using the findIndex() function from above, we
+          // can check if the string is already in the
+          // result array. If it's not in the result array
+          // (index is -1), then add it to the result array.
+          if (findIndex(result, word) === -1) {
+            result.push(word);
+          }
+         }
+         return result;
+    }
+
+  console.log(unique(['green', 'red', 'blue', 'red']));
+      console.log(unique(['red', 'green', 'green', 'red']));</script>
+</body>
+</html>

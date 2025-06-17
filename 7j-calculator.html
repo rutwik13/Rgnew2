@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    button{
+        padding: 10px;
+        /* margin-top: 50px; */
+        margin-left: 10px;
+
+    }</style>
+</head>
+<body>
+    <p>
+    <button onclick="updateCalculations('1') ">1</button>
+    <button onclick="updateCalculations('2')">2</button>
+    <button onclick="updateCalculations('3')">3</button>
+    <button onclick="updateCalculations(' + ')">+</button>
+    <!-- <button onclick="
+    // Note: eval() takes a string and runs it as code.
+    // Avoid using eval() in real world projects since
+    // it can potentially be given harmful code to run.
+    // Only use eval() for learning purposes.
+    calculation = eval(calculation);
+    console.log(calculation);
+  ">=</button> -->
+</p>
+<p>
+<button onclick="updateCalculations('4')">4</button>
+<button onclick="updateCalculations('5')">5</button>
+<button onclick="updateCalculations('6')">6</button>
+<button onclick="updateCalculations(' - ')">-</button>
+</p>
+
+<p>
+    <button onclick="updateCalculations('7')">7</button>
+    <button onclick="updateCalculations('8')">8</button>
+    <button onclick="updateCalculations('9')">9</button>
+    <button onclick="updateCalculations(' * ')">*</button>
+    </p>
+
+    <p>
+        <button onclick="updateCalculations('0')">0</button>
+        <button onclick="updateCalculations('.')">.</button>
+        <button onclick="calculation= eval(calculation); console.log(calculation)">=</button>
+        <button onclick="updateCalculations(' / ')">/</button>
+        </p>
+
+     <button onclick="calculation=''; console.log('Cleared');">Clear</button>   
+    <script>
+        let calculation ='' ;
+
+        function updateCalculations(value) {
+            calculation += value;
+            console.log(calculation);
+        }
+    </script>
+</body>
+</html>

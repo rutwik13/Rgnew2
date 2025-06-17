@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <button>1st Button</button>
+    <button class="js-btn">2nd Button</button>
+    <script>
+
+     console.log(document.querySelector('button').innerHTML);
+
+     document.querySelector('button').innerHTML = '1st btn changed';
+
+     document.querySelector('.js-btn').innerHTML = '2nd btn changed';
+
+     const buttonElement = document.querySelector('.js-btn');
+     console.log(buttonElement);
+
+
+/* 
+console.log(document.title);
+document.title ='DOM';
+
+console.log(document.body);
+
+console.log(typeof document.body) ; //object
+
+console.log(document.body.innerHTML);
+
+document.body.innerHTML = '<button>Ragnar</button> <br> <p>RG</p>';
+console.log(document.body.innerHTML);
+
+       document.body.innerHTML='Rg';
+        document.title ='DOM' */
+
+    </script>
+</body>
+</html>

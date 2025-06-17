@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ .toggle-button{
+   background-color: rgb(230, 230, 230);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 15px;
+        cursor: pointer;
+  }
+  .is-toggled {
+        background-color: black;
+        color: white;
+      }
+    </style>
+</head>
+<body> 
+    <button class="js-btn toggle-button" onclick="onOff('.js-btn')">Gaming</button>
+    <button class="js-btn1 toggle-button" onclick="onOff('.js-btn1')">Music</button>
+    <button class="js-btn2 toggle-button" onclick="onOff('.js-btn2')">Tech</button>
+
+    <script>
+        
+        function onOff(selector){
+            const game = document.querySelector(selector);
+            if(!game.classList.contains('is-toggled')){
+                 turnOffPreviousButton();
+                game.classList.add('is-toggled')
+            } else{
+                game.classList.remove('is-toggled')
+            }
+        
+        }
+
+        function turnOffPreviousButton() {
+         const previousButton = document.querySelector('.is-toggled');
+            if (previousButton) {
+                previousButton.classList.remove('is-toggled');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button>9a</button>
+    <button class="js-9b">9b</button>
+    <script>
+       console.log(document.querySelector('button')) 
+
+       document.querySelector('.js-9b').innerHTML = '9b done!';
+    </script> -->
+
+    <!-- <button onclick="document.querySelector('.js-choice').innerHTML= 'You chose: heads'">Heads</button>
+    <button onclick="document.querySelector('.js-choice').innerHTML = 'You chose: tails'">Tails</button>
+    <p class="js-choice"></p> -->
+
+     <input type="text" placeholder="Name" class="js-input" onkeydown="if(event.key === 'Enter'){showData()}">
+     <button onclick="showData();">submit</button>
+     <p class="js-data"></p>
+
+ 
+    <script>
+     function showData(){
+         const dName = document.querySelector('.js-input')
+        document.querySelector('.js-data').innerHTML = `Your Name Is : ${dName.value}`
+     }
+   
+
+
+    </script>
+</body>
+</html>
